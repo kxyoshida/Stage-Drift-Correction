@@ -1,0 +1,6 @@
+The folder contains 
+ - "Example.tif" –– an image stack showing drift.
+ - "RoiSet.zip" –– A set of rectangular ROIs to be used to select fiducial markers.
+ - "ExampleSelectopn.jpg" –– An image to illustrate the selections.
+ - "Results.xls" –– A table listing the positions of the fiducial markers.
+ - "RigidBody.txt" –– Product of running "rigidBody.py" against "Results.xls".
