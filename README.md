@@ -3,7 +3,7 @@ A set of utility programs for assisting stage drift correction by rigid body tra
 
 "back2Origin_RigidBody.java"
 
- - An ImageJ plugin that applies "rigid-body" transformation to an image stack with reference to the Results Table listing the parameters. The Results Table should have rows as many as the number of the images in the active image stack and four columns "C1", "C2", "C3", and "C4", which represent the frame number, translation amount in x axis, translation amount in y axis, and rotation angle in radians, respectively to be applied for the corresponding slice of the image stack. Currently the plugin uses bicubic interpolation for treating subpixel values.
+ - An ImageJ plugin that applies "rigid-body" transformation to an image stack with reference to the Results Table listing the parameters. The Results Table should have rows as many as the number of the images in the active image stack and four columns "C1", "C2", "C3", and "C4", which represent the frame number, translation amount in x axis, translation amount in y axis, and rotation angle in radians, respectively, to be applied for the corresponding slice of the image stack. Currently the plugin uses bicubic interpolation for treating subpixel values.
   
   
 "fiducial_Chaser.java"
@@ -14,4 +14,15 @@ A set of utility programs for assisting stage drift correction by rigid body tra
 
 "rigidBody.py"
 
- - A python script that reads the "Results.xls" that was produced by "fiducial_Chaser.java" and saved as tab-limited text file and calculate the parameters of rigid body transformation to be directly referred in "back2Origin_RigidBody.java".
+ - A python script that reads the "Results.xls" that was produced by "fiducial_Chaser.java" and saved as tab-limited text file and calculates the parameters of rigid body transformation to be directly referred in "back2Origin_RigidBody.java".
+ 
+ -----------------------------------------------------------------------------------
+ 
+ "landmark2Table.py"
+ 
+ - A python script to be used for "alternative" correction method using TurboReg. It flattens the file format of "landmarks.txt" to re-feed TurboReg through an ImageJ macro "TurboRegBatchRigidBody" to produce "TableLWM.txt".
+ 
+ 
+ "TurboRegBatchRigidBody.ijm"
+ 
+ - An imageJ macro that interfaces batch transformation of the image stack with the recorded landmarks ("TableLWM.txt").
