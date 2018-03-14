@@ -4,6 +4,7 @@
 from numpy import *
 from scipy import *
 from scipy import optimize
+import argparse
 
 def rigidBody(cp):
 
@@ -45,9 +46,23 @@ def fitfunc(p,x0,y0,x1,y1):
     return residual
 
 def main():
-    cp=genfromtxt("Results.xls", skip_header=1)
+    parser = argparse.ArgumentParser(description="Calculate rigid body transformation parameters from a tab-limited table of reference points")
+    parser.add_argument('--noheader', action='store_true',dest="noheader", default=False)
+    parser.add_argument('--noindex', action='store_true', dest="noindex", default=False)
+    parser.add_argument('infile', type=argparse.FileType('r'), nargs='*', default=["Results.xls"])
+    args = parser.parse_args()
+    print args
 
-    Ts = rigidBody(cp[:,1:])
+    if (args.noheader):
+            cp=genfromtxt(args.infile[0], skip_header=0)
+    else:
+        cp=genfromtxt(args.infile[0], skip_header=1)
+    
+    if (args.noindex):
+            Ts = rigidBody(cp[:,:])
+    else:
+        Ts = rigidBody(cp[:,1:])
+        
     savetxt("RigidBody.txt",Ts, fmt='%i\t%10.5f\t%10.5f\t%10.5f')    
     
 if __name__ == '__main__':
