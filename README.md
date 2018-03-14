@@ -9,6 +9,7 @@ A set of utility programs for assisting stage drift correction by rigid body tra
 "fiducial_Chaser.java"
 
  - An ImageJ plugin that tracks the displacement of fiducial markers in every slice of an image stack. When we encounter a stage drift problem, it is often the case that the shapes of the objects are continuously changing except a few "landmark" or fiducial markers which are supposed stationary to the stage. If we can isolate each of these fiducial markers in a rectangular ROI throughout the image stack, the plugin output the positions of the centre of the marker in the whole image in each slice of the image stack by adding two new columns to the current Results Table (–– so we first need to reset the Results Table by closing before starting a new analysis). We need to repetitively run the plugin so that we can collect the data of at least three fiducial markers (but we actually need more to make it work). The collected list of the marker positions could be used to calculate the parameters of the rigid body transformation in "rigidBody.py".
+ - The plugin uses trial and error iteration algorithm to maximise the difference of the average intensities between the inside and the outside of a circle ROI the radius of which is specified by the user.
 
 
 "rigidBody.py"
