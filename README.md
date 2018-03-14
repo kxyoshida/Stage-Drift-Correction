@@ -20,9 +20,9 @@ A set of utility programs for assisting stage drift correction by rigid body tra
  
  "landmark2Table.py"
  
- - A python script to be used for "alternative" correction method using TurboReg. It flattens the file format of "landmarks.txt" to re-feed TurboReg through an ImageJ macro "TurboRegBatchRigidBody" to produce "TableLWM.txt".
+ - A python script to be used for "alternative" correction method using TurboReg. It flattens the file format of "landmarks.txt" to re-feed TurboReg through an ImageJ macro "TurboRegBatchRigidBody" to produce "LMTable.txt".
  
  
  "TurboRegBatchRigidBody.ijm"
  
- - An imageJ macro that interfaces batch transformation of the image stack with the recorded landmarks ("TableLWM.txt").
+ - An imageJ macro that interfaces batch transformation of the image stack with the recorded landmarks ("LMTable.txt").
