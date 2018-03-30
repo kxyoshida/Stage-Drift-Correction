@@ -26,3 +26,5 @@ A set of utility programs for assisting stage drift correction by rigid body tra
  "TurboRegBatchRigidBody.ijm"
  
  - An imageJ macro that interfaces batch transformation of the image stack with the recorded landmarks ("LMTable.txt").
+ 
+ Documentation –– https://github.com/kxyoshida/Stage-Drift-Correction/wiki
